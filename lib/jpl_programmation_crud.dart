@@ -11,6 +11,7 @@ export 'src/drop_down_object.dart';
 export 'src/enum_des_type_colonnes.dart';
 export 'src/global_function_jpl_utils.dart';
 export 'src/mes_donnee.dart';
+export 'src/session.dart';
 
 //InputFields
 export 'src/inputFields/adresse.dart';

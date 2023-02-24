@@ -3,7 +3,6 @@ import 'package:flutter/foundation.dart';
 import 'package:http/http.dart' as http;
 
 import '../../jpl_programmation_crud.dart';
-import '../crypt.dart';
 import '../session.dart';
 
 Crypt crypt = Crypt();
