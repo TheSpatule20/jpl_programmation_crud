@@ -283,7 +283,7 @@ class _RoundedInputFieldState extends State<RoundedInputField> {
           maxLines: widget.typeColumn == TypeColonne.text ? null : 1,
           enabled: widget.editable,
           decoration: InputDecoration(
-            icon: widget.icon != null
+            icon: widget.icon == null
                 ? null
                 : Icon(
                     widget.icon,
