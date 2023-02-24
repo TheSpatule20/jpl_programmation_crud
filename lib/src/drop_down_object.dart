@@ -1,10 +1,12 @@
 import 'dart:convert';
 
 class DropdownObject {
+  ///Un objet général à affihcer dans un dropdown
+  const DropdownObject({this.id, required this.titre, this.description});
+
   final int? id;
   final String titre;
   final String? description;
-  const DropdownObject({this.id, required this.titre, this.description});
 
   factory DropdownObject.fromJson(Map<String, dynamic> json) {
     return DropdownObject(

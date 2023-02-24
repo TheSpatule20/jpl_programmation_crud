@@ -47,7 +47,7 @@ class _CrudItemsAfficheState extends State<CrudItemsAffiche> {
       success: widget.success,
     );
 
-    //à la première ouverture sort comme recu dans le widget
+    //À la première ouverture sort comme recu dans le widget
     if (firstOpen) {
       if (widget.sortColumnIndex != null) {
         widget.informationDataSource[widget.sortColumnIndex!].dataColumnSortCallback!(widget.object, widget.sortColumnIndex!, widget.sortAscending);
@@ -60,7 +60,7 @@ class _CrudItemsAfficheState extends State<CrudItemsAffiche> {
       });
     }
 
-    //Création de Chaque data colonne
+    //Création de Chaque colonnes de donnée
     columns = [];
     for (var element in widget.informationDataSource) {
       columns.add(

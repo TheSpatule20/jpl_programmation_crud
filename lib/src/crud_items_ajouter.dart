@@ -1,4 +1,3 @@
-
 import 'package:flutter/material.dart';
 
 import 'data_source_information.dart';
@@ -45,7 +44,7 @@ class _CrudItemsAjouterState extends State<CrudItemsAjouter> {
                 if (widget.informationDataSource[index].ajouterDefaultValue != null) {
                   listTextEditingController[index].text = widget.informationDataSource[index].ajouterDefaultValue!;
                 }
-                if (widget.informationDataSource[index].typeColonneAjouter == TypeColonne.nonAjoutable) {
+                if (widget.informationDataSource[index].typeColonne == TypeColonne.nonAjoutable) {
                   return Container();
                 }
 
@@ -53,7 +52,7 @@ class _CrudItemsAjouterState extends State<CrudItemsAjouter> {
                   return RoundedInputField(
                     hintText: widget.informationDataSource[index].titreColonne,
                     validator: null,
-                    typeColumn: widget.informationDataSource[index].typeColonneAjouter,
+                    typeColumn: widget.informationDataSource[index].typeColonne,
                     controller: listTextEditingController[index],
                   );
                 }
@@ -68,7 +67,7 @@ class _CrudItemsAjouterState extends State<CrudItemsAjouter> {
                         itemDropDown: asyncSnapshot.data,
                         hintText: widget.informationDataSource[index].titreColonne,
                         validator: null,
-                        typeColumn: widget.informationDataSource[index].typeColonneAjouter,
+                        typeColumn: widget.informationDataSource[index].typeColonne,
                         controller: listTextEditingController[index],
                       );
                     });

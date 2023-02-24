@@ -1,9 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:intl/intl.dart';
 
-
 class GlobalFunctionJPLUtils {
-  
   static String formatDateYYYYMMDD(DateTime? dateTime) {
     if (dateTime == null) {
       return '';
@@ -13,17 +11,23 @@ class GlobalFunctionJPLUtils {
     return dateFormat.format(dateTime);
   }
 
+  ///Une fonction qui convertie un string en double.
   static double? stringToDouble(String str) {
     str = str.replaceAll(RegExp(r','), '.');
     if (str.contains('null')) {
       return null;
     }
-    return double.parse(str);
+    if (double.tryParse(str) == null) {
+      return double.parse(str);
+    } else {
+      return null;
+    }
   }
 
-  static void erreurInatendu(BuildContext context) {
+  /// Une fonction qui affiche une snackBar avec un code d'erreur si il est passeé en paramètre
+  static void showSnackBarErreurInattendu({required BuildContext context, String? code}) {
     ScaffoldMessenger.of(context)
       ..removeCurrentSnackBar()
-      ..showSnackBar(const SnackBar(content: Text("Une erreur c'est produit, veuillez réessayer plus tard")));
+      ..showSnackBar(SnackBar(content: Text("Une erreur c'est produite, veuillez réessayer plus tard : $code")));
   }
 }
