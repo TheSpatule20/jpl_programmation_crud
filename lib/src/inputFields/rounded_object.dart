@@ -1,12 +1,12 @@
-import 'package:crud_item_jpl/src/drop_down_object.dart';
-import 'package:crud_item_jpl/src/enum_des_type_colonnes.dart';
-import 'package:crud_item_jpl/src/inputFields/loading.dart';
-import 'package:crud_item_jpl/src/inputFields/text_field_container.dart';
 import 'package:flutter/foundation.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import 'package:intl/intl.dart';
-import 'package:textfield_search/textfield_search.dart';
+
+import '../drop_down_object.dart';
+import '../enum_des_type_colonnes.dart';
+import 'loading.dart';
+import 'text_field_container.dart';
 
 //Peux être utile un jour https://pub.dev/packages/mask_text_input_formatter
 
@@ -52,33 +52,33 @@ class _RoundedInputFieldState extends State<RoundedInputField> {
   String valeurEnEntrant = '';
   @override
   Widget build(BuildContext context) {
-    //constStrSearchField
-    if (widget.typeColumn == TypeColonne.searchField) {
-      if (widget.itemDropDown != null) {
-        List<String> a = [];
+    // //constStrSearchField
+    // if (widget.typeColumn == TypeColonne.searchField) {
+    //   if (widget.itemDropDown != null) {
+    //     List<String> a = [];
 
-        for (var element in widget.itemDropDown!) {
-          a.add(element.titre);
-        }
+    //     for (var element in widget.itemDropDown!) {
+    //       a.add(element.titre);
+    //     }
 
-        return TextFieldContainer(
-          dblTailleMultiplieur: (1 / widget.intTailleMultiplieur),
-          child: TextFieldSearch(
-            label: '',
-            controller: widget.controller!,
-            initialList: a,
-            getSelectedValue: (value) {
-              widget.controller!.text = value;
-            },
-            decoration: InputDecoration(
-              icon: const Icon(Icons.arrow_drop_down),
-              labelText: widget.hintText,
-              border: InputBorder.none,
-            ),
-          ),
-        );
-      }
-    }
+    //     return TextFieldContainer(
+    //       dblTailleMultiplieur: (1 / widget.intTailleMultiplieur),
+    //       child: TextFieldSearch(
+    //         label: '',
+    //         controller: widget.controller!,
+    //         initialList: a,
+    //         getSelectedValue: (value) {
+    //           widget.controller!.text = value;
+    //         },
+    //         decoration: InputDecoration(
+    //           icon: const Icon(Icons.arrow_drop_down),
+    //           labelText: widget.hintText,
+    //           border: InputBorder.none,
+    //         ),
+    //       ),
+    //     );
+    //   }
+    // }
 
     //Dropdown
     if (widget.typeColumn == TypeColonne.dropdown) {

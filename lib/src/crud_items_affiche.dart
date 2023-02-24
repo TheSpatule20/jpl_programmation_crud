@@ -1,6 +1,8 @@
-import 'package:crud_item_jpl/src/crud_items_affiche_utils.dart';
-import 'package:crud_item_jpl/src/data_source_information.dart';
+
 import 'package:flutter/material.dart';
+
+import 'crud_items_affiche_utils.dart';
+import 'data_source_information.dart';
 
 class CrudItemsAffiche extends StatefulWidget {
   ///Un PaginatedDataTable qui s'adapte totalement à n'importe quelle datasource recu

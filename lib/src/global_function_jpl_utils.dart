@@ -1,11 +1,14 @@
 import 'package:flutter/material.dart';
 import 'package:intl/intl.dart';
 
+
 class GlobalFunctionJPLUtils {
+  
   static String formatDateYYYYMMDD(DateTime? dateTime) {
     if (dateTime == null) {
       return '';
     }
+
     DateFormat dateFormat = DateFormat('yyyy-MM-dd');
     return dateFormat.format(dateTime);
   }

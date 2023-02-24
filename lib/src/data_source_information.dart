@@ -1,6 +1,8 @@
-import 'package:crud_item_jpl/src/drop_down_object.dart';
-import 'package:crud_item_jpl/src/enum_des_type_colonnes.dart';
+
 import 'package:flutter/material.dart';
+
+import 'drop_down_object.dart';
+import 'enum_des_type_colonnes.dart';
 
 class DataSourceInformation {
   String titreColonne;

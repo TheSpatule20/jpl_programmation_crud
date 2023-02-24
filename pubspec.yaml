@@ -1,4 +1,4 @@
-name: crud_item_jpl
+name: jpl_programmation_crud
 description: A new Flutter package project.
 version: 0.0.1
 homepage:
@@ -10,8 +10,7 @@ environment:
 dependencies:
   flutter:
     sdk: flutter
-  intl: ^0.18.0
-  textfield_search: ^0.10.0
+  intl: ^0.17.0
 
 dev_dependencies:
   flutter_test:

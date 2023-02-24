@@ -1,7 +1,9 @@
-import 'package:crud_item_jpl/src/data_source_information.dart';
-import 'package:crud_item_jpl/src/global_function_jpl_utils.dart';
-import 'package:crud_item_jpl/src/mes_donnee.dart';
+
 import 'package:flutter/material.dart';
+
+import 'data_source_information.dart';
+import 'global_function_jpl_utils.dart';
+import 'mes_donnee.dart';
 
 class CrudItemAfficheUtils {
   static List<T> modelBuilder<M, T>(List<M> models, T Function(int index, M model) builder) =>

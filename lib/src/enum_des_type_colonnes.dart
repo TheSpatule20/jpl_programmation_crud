@@ -9,5 +9,5 @@ enum TypeColonne {
   time,
   phone,
   dropdown,
-  searchField,
+ // searchField,
 }

@@ -1,9 +1,11 @@
-import 'package:crud_item_jpl/src/data_source_information.dart';
-import 'package:crud_item_jpl/src/drop_down_object.dart';
-import 'package:crud_item_jpl/src/enum_des_type_colonnes.dart';
-import 'package:crud_item_jpl/src/inputFields/loading.dart';
-import 'package:crud_item_jpl/src/inputFields/rounded_object.dart';
+
 import 'package:flutter/material.dart';
+
+import 'data_source_information.dart';
+import 'drop_down_object.dart';
+import 'enum_des_type_colonnes.dart';
+import 'inputFields/loading.dart';
+import 'inputFields/rounded_object.dart';
 
 class CrudItemsAjouter extends StatefulWidget {
   final String title;
