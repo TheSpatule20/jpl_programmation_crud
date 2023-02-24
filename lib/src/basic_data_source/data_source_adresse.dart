@@ -1,7 +1,9 @@
 import 'dart:convert';
 import 'package:http/http.dart' as http;
+import 'package:jpl_programmation_crud/src/data_source_information.dart';
 import '../inputFields/adresse.dart';
 import '../session.dart';
+import 'data_source.dart';
 
 const String constStrAdresseId = 'adresseId';
 const String constStrPays = 'pays';
@@ -11,7 +13,7 @@ const String constStrVille = 'ville';
 const String constStrLigne1 = 'ligne1';
 const String constStrLigne2 = 'ligne2';
 
-class Adresse {
+class Adresse{
   int? adresseId;
   String? pays;
   String? province;
@@ -76,6 +78,8 @@ class Adresse {
 
     return adresseFormater;
   }
+
+ 
 }
 
 class DataSourceAdresse {

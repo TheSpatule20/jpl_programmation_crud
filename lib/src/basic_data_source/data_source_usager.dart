@@ -4,6 +4,7 @@ import 'package:http/http.dart' as http;
 
 import '../../jpl_programmation_crud.dart';
 import '../session.dart';
+import 'data_source.dart';
 
 Crypt crypt = Crypt();
 const String constStrUsagerId = 'usagerId';
@@ -17,7 +18,7 @@ const String constStrAdminsitrateur = 'administrateur';
 const String constStrDateInscription = 'dateInscription';
 const String constStrDateDerniereConnection = 'dateDerniereConnection';
 
-class Usager {
+class Usager{
   int? usagerId;
   String? courriel;
   String? motDePasse;
@@ -41,6 +42,7 @@ class Usager {
     this.dateInscription,
     this.dateDerniereConnection,
   });
+
   factory Usager.fromJson(Map<String, dynamic> json) {
     return Usager(
       usagerId: json[constStrUsagerId],
@@ -55,6 +57,7 @@ class Usager {
       dateDerniereConnection: (json[constStrDateDerniereConnection].toString() == 'null' ? null : DateTime.parse(json[constStrDateDerniereConnection])),
     );
   }
+  
   Map<String, String> toJson() => {
         jsonEncode(constStrUsagerId): jsonEncode(usagerId),
         jsonEncode(constStrCourriel): jsonEncode(courriel.toString()),
