@@ -166,7 +166,8 @@ class DataSourceUsager {
 const String conStrColUsagerCourriel = 'courriel';
 
 class EmailAuth {
-  final String urlPrefixe, dossierUsager, sessionName, courriel;
+  final String urlPrefixe, dossierUsager, sessionName;
+  String courriel;
   EmailAuth({
     required this.sessionName,
     required this.courriel,
