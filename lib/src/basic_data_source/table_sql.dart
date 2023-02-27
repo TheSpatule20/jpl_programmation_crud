@@ -1,7 +1,7 @@
 import 'package:jpl_programmation_crud/src/data_source_information.dart';
 
-abstract class DataSource {
+abstract class TableSQL {
   List<dynamic> cells();
-  List<DataSourceInformation> get informationDataSource;
 
+  List<DataSourceInformation> get informationDataSource;
 }

@@ -3,8 +3,6 @@ import 'package:flutter/foundation.dart';
 import 'package:http/http.dart' as http;
 
 import '../../jpl_programmation_crud.dart';
-import '../session.dart';
-import 'data_source.dart';
 
 Crypt crypt = Crypt();
 const String constStrUsagerId = 'usagerId';
@@ -18,7 +16,7 @@ const String constStrAdminsitrateur = 'administrateur';
 const String constStrDateInscription = 'dateInscription';
 const String constStrDateDerniereConnection = 'dateDerniereConnection';
 
-class Usager{
+class Usager extends TableSQL {
   int? usagerId;
   String? courriel;
   String? motDePasse;
@@ -43,6 +41,16 @@ class Usager{
     this.dateDerniereConnection,
   });
 
+  @override
+  List cells() {
+    //Ne pas implementer, car pas faire de tableau avec ses données la.
+    throw UnimplementedError();
+  }
+
+  @override
+  //Ne pas implementer, car pas faire de tableau avec ses données la.
+  List<DataSourceInformation> get informationDataSource => throw UnimplementedError();
+
   factory Usager.fromJson(Map<String, dynamic> json) {
     return Usager(
       usagerId: json[constStrUsagerId],
@@ -57,7 +65,7 @@ class Usager{
       dateDerniereConnection: (json[constStrDateDerniereConnection].toString() == 'null' ? null : DateTime.parse(json[constStrDateDerniereConnection])),
     );
   }
-  
+
   Map<String, String> toJson() => {
         jsonEncode(constStrUsagerId): jsonEncode(usagerId),
         jsonEncode(constStrCourriel): jsonEncode(courriel.toString()),

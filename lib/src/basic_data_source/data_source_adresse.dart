@@ -1,9 +1,6 @@
 import 'dart:convert';
 import 'package:http/http.dart' as http;
-import 'package:jpl_programmation_crud/src/data_source_information.dart';
-import '../inputFields/adresse.dart';
-import '../session.dart';
-import 'data_source.dart';
+import 'package:jpl_programmation_crud/jpl_programmation_crud.dart';
 
 const String constStrAdresseId = 'adresseId';
 const String constStrPays = 'pays';
@@ -13,7 +10,7 @@ const String constStrVille = 'ville';
 const String constStrLigne1 = 'ligne1';
 const String constStrLigne2 = 'ligne2';
 
-class Adresse{
+class Adresse extends TableSQL {
   int? adresseId;
   String? pays;
   String? province;
@@ -32,14 +29,16 @@ class Adresse{
     this.ligne2,
   });
 
-  static String adresseToString(Adresse adresse) {
-    String adresseString = '';
-    adresseString = '${adresse.ligne1 ?? ""} ${adresse.ville ?? ""} ${adresse.province ?? ""} ${adresse.pays ?? ""}, ${adresse.codePostal ?? ""}';
-    if (adresseString == ",    , ") {
-      adresseString = '';
-    }
+  @override
+  List cells() {
+    //Ne pas implementer, car pas faire de tableau avec ses données la.
+    throw UnimplementedError();
+  }
 
-    return adresseString;
+  @override
+  List<DataSourceInformation> get informationDataSource {
+    //Ne pas implementer, car pas faire de tableau avec ses données la.
+    throw UnimplementedError();
   }
 
   factory Adresse.fromJson(Map<String, dynamic> json) {
@@ -53,7 +52,8 @@ class Adresse{
       ligne2: json[constStrLigne2] == null ? '' : json[constStrLigne2].toString(),
     );
   }
-  Map<String, dynamic> toJson() => {
+
+  Map<String, String> toJson() => {
         jsonEncode(constStrAdresseId): jsonEncode(adresseId),
         jsonEncode(constStrPays): jsonEncode(pays),
         jsonEncode(constStrProvince): jsonEncode(province),
@@ -62,6 +62,16 @@ class Adresse{
         jsonEncode(constStrLigne1): jsonEncode(ligne1),
         jsonEncode(constStrLigne2): jsonEncode(ligne2),
       };
+
+  static String adresseToString(Adresse adresse) {
+    String adresseString = '';
+    adresseString = '${adresse.ligne1 ?? ""} ${adresse.ville ?? ""} ${adresse.province ?? ""} ${adresse.pays ?? ""}, ${adresse.codePostal ?? ""}';
+    if (adresseString == ",    , ") {
+      adresseString = '';
+    }
+
+    return adresseString;
+  }
 
   String toStringFormated() {
     Adresse adresseRetour =
@@ -78,8 +88,6 @@ class Adresse{
 
     return adresseFormater;
   }
-
- 
 }
 
 class DataSourceAdresse {
