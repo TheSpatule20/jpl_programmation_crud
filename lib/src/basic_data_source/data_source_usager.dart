@@ -16,7 +16,7 @@ const String constStrAdminsitrateur = 'administrateur';
 const String constStrDateInscription = 'dateInscription';
 const String constStrDateDerniereConnection = 'dateDerniereConnection';
 
-class Usager extends TableSQL {
+class Usager{
   int? usagerId;
   String? courriel;
   String? motDePasse;
@@ -40,16 +40,6 @@ class Usager extends TableSQL {
     this.dateInscription,
     this.dateDerniereConnection,
   });
-
-  @override
-  List cells() {
-    //Ne pas implementer, car pas faire de tableau avec ses données la.
-    throw UnimplementedError();
-  }
-
-  @override
-  //Ne pas implementer, car pas faire de tableau avec ses données la.
-  List<DataSourceInformation> get informationDataSource => throw UnimplementedError();
 
   factory Usager.fromJson(Map<String, dynamic> json) {
     return Usager(

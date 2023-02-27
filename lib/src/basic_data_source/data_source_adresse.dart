@@ -10,7 +10,7 @@ const String constStrVille = 'ville';
 const String constStrLigne1 = 'ligne1';
 const String constStrLigne2 = 'ligne2';
 
-class Adresse extends TableSQL {
+class Adresse{
   int? adresseId;
   String? pays;
   String? province;
@@ -28,18 +28,6 @@ class Adresse extends TableSQL {
     required this.ligne1,
     this.ligne2,
   });
-
-  @override
-  List cells() {
-    //Ne pas implementer, car pas faire de tableau avec ses données la.
-    throw UnimplementedError();
-  }
-
-  @override
-  List<DataSourceInformation> get informationDataSource {
-    //Ne pas implementer, car pas faire de tableau avec ses données la.
-    throw UnimplementedError();
-  }
 
   factory Adresse.fromJson(Map<String, dynamic> json) {
     return Adresse(

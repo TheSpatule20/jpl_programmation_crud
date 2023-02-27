@@ -107,7 +107,7 @@ class _RoundedInputFieldState extends State<RoundedInputField> {
           child: widget.editable
               ? DropdownButtonFormField<DropdownObject>(
                   isExpanded: true,
-                  style: const TextStyle(fontWeight: FontWeight.bold),
+                  style: const TextStyle(color: Colors.black, fontWeight: FontWeight.bold),
                   decoration: InputDecoration(
                     icon: const Icon(Icons.arrow_drop_down),
                     labelText: widget.hintText,

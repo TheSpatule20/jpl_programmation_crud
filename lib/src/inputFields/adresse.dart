@@ -1,9 +1,5 @@
 import 'package:jpl_programmation_crud/jpl_programmation_crud.dart';
-
 import 'package:flutter/material.dart';
-
-import '../basic_data_source/data_source_adresse.dart';
-import '../const.dart';
 
 //String Extension pratique
 extension StringCasingExtension on String {
