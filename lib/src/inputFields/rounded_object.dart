@@ -389,14 +389,14 @@ class RoundedPasswordField extends StatefulWidget {
   final String hintText;
   final TextEditingController controller;
   final ValueChanged<String>? onFieldSubmitted;
-  final FormFieldValidator<String> validator;
+  final FormFieldValidator<String>? validator;
 
   const RoundedPasswordField({
     Key? key,
     this.onChanged,
     required this.hintText,
     required this.controller,
-    required this.validator,
+    this.validator,
     this.onFieldSubmitted,
   }) : super(key: key);
 
@@ -418,7 +418,7 @@ class _RoundedPasswordFieldState extends State<RoundedPasswordField> {
         obscureText: !_showPassword,
         onChanged: widget.onChanged,
         //cursorColor: clrSecondary,
-        validator: (value) => widget.validator(value),
+        validator: widget.validator,
         decoration: InputDecoration(
           hintText: widget.hintText,
           icon: const Icon(
