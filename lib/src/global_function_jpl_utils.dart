@@ -51,7 +51,7 @@ bool analyseResponseBodyPourInt(String responseBody) {
 }
 
 int boolToJson(bool? bool) {
-  if (bool = true) {
+  if (bool == true) {
     return 1;
   }
   return 0;
