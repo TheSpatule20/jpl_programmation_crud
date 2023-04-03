@@ -58,7 +58,7 @@ int boolToJson(bool? bool) {
 }
 
 bool? jsonToBool(var jsonValeur) {
-  return jsonValeur == null ? null : (jsonValeur == 1 || jsonValeur.toString().toLowerCase() == 'true' ? true : false);
+  return jsonValeur == null ? null : (jsonValeur.toString() == '1' || jsonValeur.toString().toLowerCase() == 'true' ? true : false);
 }
 
 Future<bool> consulterField(BuildContext context, String valeur) async {
