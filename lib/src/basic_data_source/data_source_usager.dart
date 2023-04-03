@@ -16,7 +16,7 @@ const String constStrAdminsitrateur = 'administrateur';
 const String constStrDateInscription = 'dateInscription';
 const String constStrDateDerniereConnection = 'dateDerniereConnection';
 
-class Usager{
+class Usager {
   int? usagerId;
   String? courriel;
   String? motDePasse;
@@ -160,6 +160,27 @@ class DataSourceUsager {
     }
 
     return usagerId;
+  }
+
+  Future<bool> modifierAdministrateur(Usager usagerModifier) async {
+    String basicAuth = await getBasicAuth();
+
+    final response = await http.post(
+      Uri.parse("$urlPrefixe/$dossierUsager/modifierAdministrateur.php"),
+      headers: {
+        'authorization': basicAuth,
+        "Cache-Control": "no-cache",
+      },
+      body: {
+        'usager': usagerModifier.toJson().toString(),
+      },
+    );
+
+    if (response.body == 'false') {
+      return false;
+    }
+
+    return true;
   }
 }
 

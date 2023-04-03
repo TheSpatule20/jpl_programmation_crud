@@ -34,7 +34,6 @@ class GlobalFunctionJPLUtils {
   }
 }
 
-
 ///Fonction pour analyser le retour d'un datasource
 ///Le string recu n'est pas vide
 ///ET que le string est un chiffre
