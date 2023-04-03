@@ -3,11 +3,12 @@ import 'dart:convert';
 import 'package:shared_preferences/shared_preferences.dart';
 
 import 'basic_data_source/data_source_usager.dart';
+import 'crypt.dart';
 
 Future<String> getBasicAuth() async {
   Usager connectedUsager = await Session.usagerInformationDeConnectionGet();
 
-  String basicAuth = 'Basic ${base64Encode(utf8.encode('${connectedUsager.courriel.toString()}:${connectedUsager.motDePasse}'))}';
+  String basicAuth = 'Basic ${base64Encode(utf8.encode('${connectedUsager.courriel}:${Crypt.hash(connectedUsager.motDePasse ?? '')}'))}';
 
   return basicAuth;
 }
