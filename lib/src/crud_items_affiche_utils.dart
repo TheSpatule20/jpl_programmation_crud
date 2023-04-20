@@ -1,10 +1,8 @@
-
 import 'package:flutter/material.dart';
 
 import 'data_source_information.dart';
 import 'global_function_jpl_utils.dart';
 import 'mes_donnee.dart';
-
 
 class CrudItemAfficheUtils {
   static List<T> modelBuilder<M, T>(List<M> models, T Function(int index, M model) builder) =>
@@ -38,10 +36,12 @@ class CrudItemAfficheUtils {
                   padding: const EdgeInsets.all(2.0),
                   child: Icon(cell == true ? Icons.check_box : Icons.check_box_outline_blank),
                 ), onTap: () async {
-              Future<bool> Function(BuildContext, Object) onTap = informationDataSource[index].cellEdition;
-              bool reponse = await onTap(context, object);
-              if (reponse) {
-                success();
+              Future<bool> Function(BuildContext, Object)? onTap = informationDataSource[index].cellEdition;
+              if (onTap != null) {
+                bool reponse = await onTap(context, object);
+                if (reponse) {
+                  success();
+                }
               }
             });
           } else if (cell is DateTime) {
@@ -56,11 +56,13 @@ class CrudItemAfficheUtils {
                 ),
               ),
               onTap: () async {
-                Future<bool> Function(BuildContext, Object) onTap = informationDataSource[index].cellEdition;
+                Future<bool> Function(BuildContext, Object)? onTap = informationDataSource[index].cellEdition;
+              if (onTap != null) {
                 bool reponse = await onTap(context, object);
                 if (reponse) {
                   success();
                 }
+              }
               },
             );
           } else if (cell is IconData) {
@@ -74,11 +76,13 @@ class CrudItemAfficheUtils {
                 )),
               ),
               onTap: () async {
-                Future<bool> Function(BuildContext, Object) onTap = informationDataSource[index].cellEdition;
+                Future<bool> Function(BuildContext, Object)? onTap = informationDataSource[index].cellEdition;
+              if (onTap != null) {
                 bool reponse = await onTap(context, object);
                 if (reponse) {
                   success();
                 }
+              }
               },
             );
           }
@@ -95,10 +99,12 @@ class CrudItemAfficheUtils {
               ),
             ),
             onTap: () async {
-              Future<bool> Function(BuildContext, Object) onTap = informationDataSource[index].cellEdition;
-              bool reponse = await onTap(context, object);
-              if (reponse) {
-                success();
+              Future<bool> Function(BuildContext, Object)? onTap = informationDataSource[index].cellEdition;
+              if (onTap != null) {
+                bool reponse = await onTap(context, object);
+                if (reponse) {
+                  success();
+                }
               }
             },
           );

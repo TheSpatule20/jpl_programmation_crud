@@ -5,7 +5,7 @@ import 'enum_des_type_colonnes.dart';
 
 class DataSourceInformation {
   String titreColonne;
-  Future<bool> Function(BuildContext context, Object object) cellEdition;
+  Future<bool> Function(BuildContext context, Object object)? cellEdition;
   TypeColonne typeColonne;
   String? ajouterDefaultValue;
   void Function(List<Object> data, int columnIndex, bool ascending)? dataColumnSortCallback;
@@ -21,7 +21,7 @@ class DataSourceInformation {
   ///[dataColumnSortCallback] //Pour trier les données
   DataSourceInformation({
     required this.titreColonne,
-    required this.cellEdition,
+    this.cellEdition,
     required this.typeColonne,
     this.listFunctionInformationDropdownObject,
     this.ajouterDefaultValue,

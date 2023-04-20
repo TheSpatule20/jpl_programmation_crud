@@ -45,15 +45,16 @@ class MyData extends DataTableSource {
                 padding: const EdgeInsets.all(2.0),
                 child: Icon(cell == true ? Icons.check_box : Icons.check_box_outline_blank),
               ), onTap: () async {
-            Future<bool> Function(BuildContext, Object) onTap = informationDataSource[index].cellEdition;
-
-            bool reponse = await onTap(context, object);
-            if (reponse) {
-              success();
+            Future<bool> Function(BuildContext, Object)? onTap = informationDataSource[index].cellEdition;
+            if (onTap != null) {
+              bool reponse = await onTap(context, object);
+              if (reponse) {
+                success();
+              }
             }
-          }); 
+          });
           //Si la cellule contient une valeur date heure
-        } else if (cell is DateTime) { 
+        } else if (cell is DateTime) {
           String valeur = GlobalFunctionJPLUtils.formatDateYYYYMMDD(cell);
           return DataCell(
             Padding(
@@ -65,10 +66,12 @@ class MyData extends DataTableSource {
               ),
             ),
             onTap: () async {
-              Future<bool> Function(BuildContext, Object) onTap = informationDataSource[index].cellEdition;
-              bool reponse = await onTap(context, object);
-              if (reponse) {
-                success();
+              Future<bool> Function(BuildContext, Object)? onTap = informationDataSource[index].cellEdition;
+              if (onTap != null) {
+                bool reponse = await onTap(context, object);
+                if (reponse) {
+                  success();
+                }
               }
             },
           );
@@ -84,10 +87,12 @@ class MyData extends DataTableSource {
               )),
             ),
             onTap: () async {
-              Future<bool> Function(BuildContext, Object) onTap = informationDataSource[index].cellEdition;
-              bool reponse = await onTap(context, object);
-              if (reponse) {
-                success();
+              Future<bool> Function(BuildContext, Object)? onTap = informationDataSource[index].cellEdition;
+              if (onTap != null) {
+                bool reponse = await onTap(context, object);
+                if (reponse) {
+                  success();
+                }
               }
             },
           );
@@ -107,10 +112,12 @@ class MyData extends DataTableSource {
             ),
           ),
           onTap: () async {
-            Future<bool> Function(BuildContext, Object) onTap = informationDataSource[index].cellEdition;
-            bool reponse = await onTap(context, object);
-            if (reponse) {
-              success();
+            Future<bool> Function(BuildContext, Object)? onTap = informationDataSource[index].cellEdition;
+            if (onTap != null) {
+              bool reponse = await onTap(context, object);
+              if (reponse) {
+                success();
+              }
             }
           },
         );
