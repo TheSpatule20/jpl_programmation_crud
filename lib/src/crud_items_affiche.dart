@@ -18,8 +18,8 @@ class CrudItemsAffiche extends StatefulWidget {
     this.rowsPerPage = 15,
   }) : super(key: key);
 
-  final List<Object> object;
-  final Function(Object object) getCell;
+  final List<dynamic> object;
+  final Function(dynamic object) getCell;
   final Function() success;
   final List<DataSourceInformation> informationDataSource;
   final Widget? header;

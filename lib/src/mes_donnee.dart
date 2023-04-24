@@ -27,15 +27,15 @@ class MyData extends DataTableSource {
   });
 
   BuildContext context;
-  List<Object> objects;
-  Function(Object object) getCell;
+  List<dynamic> objects;
+  Function(dynamic object) getCell;
   List<DataSourceInformation> informationDataSource;
   Function() success;
 
   @override
   DataRow? getRow(int index) {
     List<dynamic> cells = getCell(objects[index]);
-    Object object = objects[index];
+    dynamic object = objects[index];
     return DataRow(
       cells: CrudItemAfficheUtils.modelBuilder(cells, (index, cell) {
         //Si la cellule contient une valeur bool

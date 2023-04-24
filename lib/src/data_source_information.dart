@@ -5,7 +5,7 @@ import 'enum_des_type_colonnes.dart';
 
 class DataSourceInformation {
   String titreColonne;
-  Future<bool> Function(BuildContext context, Object object)? cellEdition;
+  Future<bool> Function(BuildContext context, dynamic object)? cellEdition;
   TypeColonne typeColonne;
   String? ajouterDefaultValue;
   void Function(List<dynamic> data, int columnIndex, bool ascending)? dataColumnSortCallback;
