@@ -35,15 +35,18 @@ class CrudItemAfficheUtils {
                 Padding(
                   padding: const EdgeInsets.all(2.0),
                   child: Icon(cell == true ? Icons.check_box : Icons.check_box_outline_blank),
-                ), onTap: () async {
-              Future<bool> Function(BuildContext, dynamic)? onTap = informationDataSource[index].cellEdition;
-              if (onTap != null) {
-                bool reponse = await onTap(context, object);
-                if (reponse) {
-                  success();
-                }
-              }
-            });
+                ),
+                onTap: informationDataSource[index].cellEdition == null
+                    ? null
+                    : () async {
+                        Future<bool> Function(BuildContext, dynamic)? onTap = informationDataSource[index].cellEdition;
+                        if (onTap != null) {
+                          bool reponse = await onTap(context, object);
+                          if (reponse) {
+                            success();
+                          }
+                        }
+                      });
           } else if (cell is DateTime) {
             String valeur = GlobalFunctionJPLUtils.formatDateYYYYMMDD(cell);
             return DataCell(
@@ -55,15 +58,17 @@ class CrudItemAfficheUtils {
                   style: const TextStyle(fontSize: 16),
                 ),
               ),
-              onTap: () async {
-                Future<bool> Function(BuildContext, dynamic)? onTap = informationDataSource[index].cellEdition;
-              if (onTap != null) {
-                bool reponse = await onTap(context, object);
-                if (reponse) {
-                  success();
-                }
-              }
-              },
+              onTap: informationDataSource[index].cellEdition == null
+                  ? null
+                  : () async {
+                      Future<bool> Function(BuildContext, dynamic)? onTap = informationDataSource[index].cellEdition;
+                      if (onTap != null) {
+                        bool reponse = await onTap(context, object);
+                        if (reponse) {
+                          success();
+                        }
+                      }
+                    },
             );
           } else if (cell is IconData) {
             return DataCell(
@@ -75,15 +80,17 @@ class CrudItemAfficheUtils {
                   color: Theme.of(context).colorScheme.primary,
                 )),
               ),
-              onTap: () async {
-                Future<bool> Function(BuildContext, dynamic)? onTap = informationDataSource[index].cellEdition;
-              if (onTap != null) {
-                bool reponse = await onTap(context, object);
-                if (reponse) {
-                  success();
-                }
-              }
-              },
+              onTap: informationDataSource[index].cellEdition == null
+                  ? null
+                  : () async {
+                      Future<bool> Function(BuildContext, dynamic)? onTap = informationDataSource[index].cellEdition;
+                      if (onTap != null) {
+                        bool reponse = await onTap(context, object);
+                        if (reponse) {
+                          success();
+                        }
+                      }
+                    },
             );
           }
           if (cell.toString() == 'null') {
@@ -98,15 +105,17 @@ class CrudItemAfficheUtils {
                 style: const TextStyle(fontSize: 16),
               ),
             ),
-            onTap: () async {
-              Future<bool> Function(BuildContext, dynamic)? onTap = informationDataSource[index].cellEdition;
-              if (onTap != null) {
-                bool reponse = await onTap(context, object);
-                if (reponse) {
-                  success();
-                }
-              }
-            },
+            onTap: informationDataSource[index].cellEdition == null
+                ? null
+                : () async {
+                    Future<bool> Function(BuildContext, dynamic)? onTap = informationDataSource[index].cellEdition;
+                    if (onTap != null) {
+                      bool reponse = await onTap(context, object);
+                      if (reponse) {
+                        success();
+                      }
+                    }
+                  },
           );
         }),
       );
