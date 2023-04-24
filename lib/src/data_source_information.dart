@@ -8,7 +8,7 @@ class DataSourceInformation {
   Future<bool> Function(BuildContext context, Object object)? cellEdition;
   TypeColonne typeColonne;
   String? ajouterDefaultValue;
-  void Function(List<Object> data, int columnIndex, bool ascending)? dataColumnSortCallback;
+  void Function(List<dynamic> data, int columnIndex, bool ascending)? dataColumnSortCallback;
   Future<List<DropdownObject>> Function()? listFunctionInformationDropdownObject;
 
   ///Pour chaque champs (Colonnes) à afficher dans un tableau
@@ -16,7 +16,7 @@ class DataSourceInformation {
   ///[titreColonne] Le nom qui doit être afficher
   ///[cellEdition] Function qui permet l'edition d'un information de cette colonne
   ///[typeColonne] Le type de donnée qui doit être afficher
-  ///[listFunctionInformationDropdownObject] //Si c'est un dropdown la liste de toutes les informations doit être passé ici 
+  ///[listFunctionInformationDropdownObject] //Si c'est un dropdown la liste de toutes les informations doit être passé ici
   ///[ajouterDefaultValue] //La valeur par défaut lorsque tu en créer un nouveau
   ///[dataColumnSortCallback] //Pour trier les données
   DataSourceInformation({
