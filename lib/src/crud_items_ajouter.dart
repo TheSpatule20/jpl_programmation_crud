@@ -28,14 +28,16 @@ class _CrudItemsAjouterState extends State<CrudItemsAjouter> {
           mainAxisAlignment: MainAxisAlignment.start,
           crossAxisAlignment: CrossAxisAlignment.center,
           children: [
-            Row(
-              children: [
-                Padding(
-                  padding: const EdgeInsets.all(8.0),
-                  child: Text(widget.title, style: const TextStyle(fontSize: 24)),
-                ),
-              ],
-            ),
+            widget.title.isNotEmpty
+                ? Row(
+                    children: [
+                      Padding(
+                        padding: const EdgeInsets.all(8.0),
+                        child: Text(widget.title, style: const TextStyle(fontSize: 24)),
+                      ),
+                    ],
+                  )
+                : Container(),
             ListView.builder(
               shrinkWrap: true,
               itemCount: widget.informationDataSource.length,
