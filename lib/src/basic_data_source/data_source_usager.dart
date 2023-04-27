@@ -182,6 +182,27 @@ class DataSourceUsager {
 
     return true;
   }
+
+  Future<bool> modifierCourriel(Usager usagerModifier) async {
+    String basicAuth = await getBasicAuth();
+
+    final response = await http.post(
+      Uri.parse("$urlPrefixe/$dossierUsager/modifierCourriel.php"),
+      headers: {
+        'authorization': basicAuth,
+        "Cache-Control": "no-cache",
+      },
+      body: {
+        'usager': usagerModifier.toJson().toString(),
+      },
+    );
+
+    if (response.body == 'false') {
+      return false;
+    }
+
+    return true;
+  }
 }
 
 const String conStrColUsagerCourriel = 'courriel';
