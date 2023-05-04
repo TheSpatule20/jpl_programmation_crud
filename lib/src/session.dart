@@ -4,15 +4,15 @@ import 'package:shared_preferences/shared_preferences.dart';
 
 import 'basic_data_source/data_source_usager.dart';
 
-Future<String> getBasicAuth() async {
-  Usager connectedUsager = await Session.usagerConnecterGet();
-
-  String basicAuth = 'Basic ${base64Encode(utf8.encode('${connectedUsager.courriel}:${connectedUsager.motDePasse}'))}';
-
-  return basicAuth;
-}
-
 class Session {
+  static Future<String> getBasicAuth() async {
+    Usager connectedUsager = await Session.usagerConnecterGet();
+
+    String basicAuth = 'Basic ${base64Encode(utf8.encode('${connectedUsager.courriel}:${connectedUsager.motDePasse}'))}';
+
+    return basicAuth;
+  }
+
   static Usager constEmployeConnecte = Usager();
 
   /// Définit les informations de connexion de l'utilisateur dans les SharedPreferences.

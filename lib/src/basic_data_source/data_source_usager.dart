@@ -97,7 +97,7 @@ class DataSourceUsager {
   }
 
   Future<bool> modifierMotDePasseEtConfirmerCourriel(Usager usagerModifier) async {
-    String basicAuth = await getBasicAuth();
+    String basicAuth = await Session.getBasicAuth();
 
     final response = await http.post(
       Uri.parse("$urlPrefixe/$dossierUsager/modifierMotDePasseEtConfirmerCourriel.php"),
@@ -118,7 +118,7 @@ class DataSourceUsager {
   }
 
   Future<bool> modifierConfirmerCourriel(Usager usagerModifier) async {
-    String basicAuth = await getBasicAuth();
+    String basicAuth = await Session.getBasicAuth();
 
     final response = await http.post(
       Uri.parse("$urlPrefixe/$dossierUsager/modifierConfirmerCourriel.php"),
@@ -141,7 +141,7 @@ class DataSourceUsager {
   Future<int> add({
     required Usager usager,
   }) async {
-    String basicAuth = await getBasicAuth();
+    String basicAuth = await Session.getBasicAuth();
 
     final response = await http.post(
       Uri.parse("$urlPrefixe/$dossierUsager/add.php"),
@@ -163,7 +163,7 @@ class DataSourceUsager {
   }
 
   Future<bool> modifierAdministrateur(Usager usagerModifier) async {
-    String basicAuth = await getBasicAuth();
+    String basicAuth = await Session.getBasicAuth();
 
     final response = await http.post(
       Uri.parse("$urlPrefixe/$dossierUsager/modifierAdministrateur.php"),
@@ -184,7 +184,7 @@ class DataSourceUsager {
   }
 
    Future<bool> modifierActif(Usager usagerModifier) async {
-    String basicAuth = await getBasicAuth();
+    String basicAuth = await Session.getBasicAuth();
 
     final response = await http.post(
       Uri.parse("$urlPrefixe/$dossierUsager/modifierActif.php"),
@@ -205,7 +205,7 @@ class DataSourceUsager {
   }
 
   Future<bool> modifierCourriel(Usager usagerModifier) async {
-    String basicAuth = await getBasicAuth();
+    String basicAuth = await Session.getBasicAuth();
 
     final response = await http.post(
       Uri.parse("$urlPrefixe/$dossierUsager/modifierCourriel.php"),

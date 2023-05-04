@@ -10,7 +10,7 @@ const String constStrVille = 'ville';
 const String constStrLigne1 = 'ligne1';
 const String constStrLigne2 = 'ligne2';
 
-class Adresse{
+class Adresse {
   int? adresseId;
   String? pays;
   String? province;
@@ -83,7 +83,7 @@ class DataSourceAdresse {
   DataSourceAdresse({required this.urlPrefixe, required this.dossierAdresse});
 
   Future<Adresse> readOneWithAdresseId({required int adresseId}) async {
-    String basicAuth = await getBasicAuth();
+    String basicAuth = await Session.getBasicAuth();
 
     final response = await http.post(
       Uri.parse("$urlPrefixe/$dossierAdresse/readOneWithAdresseId.php"),
@@ -106,7 +106,7 @@ class DataSourceAdresse {
   }
 
   Future<int> add(Adresse adresse) async {
-    String basicAuth = await getBasicAuth();
+    String basicAuth = await Session.getBasicAuth();
 
     final response = await http.post(
       Uri.parse("$urlPrefixe/$dossierAdresse/add.php"),
@@ -128,7 +128,7 @@ class DataSourceAdresse {
   }
 
   Future<bool> edit({required Adresse adresse}) async {
-    String basicAuth = await getBasicAuth();
+    String basicAuth = await Session.getBasicAuth();
 
     final response = await http.post(
       Uri.parse("$urlPrefixe/$dossierAdresse/edit.php"),
