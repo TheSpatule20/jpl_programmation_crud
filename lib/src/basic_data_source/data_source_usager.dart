@@ -155,8 +155,10 @@ class DataSourceUsager {
     );
 
     int usagerId = -1;
-    if (response.body != 'false' && response.body != '') {
+    if (response.body != 'false' && response.body != '' && int.tryParse(json.decode(response.body)) != null) {
       usagerId = json.decode(response.body);
+    } else if (json.decode(response.body)['error'] != null) {
+      usagerId = -2;
     }
 
     return usagerId;
@@ -183,7 +185,7 @@ class DataSourceUsager {
     return true;
   }
 
-   Future<bool> modifierActif(Usager usagerModifier) async {
+  Future<bool> modifierActif(Usager usagerModifier) async {
     String basicAuth = await Session.getBasicAuth();
 
     final response = await http.post(
