@@ -155,7 +155,7 @@ class DataSourceUsager {
     );
 
     int usagerId = -1;
-    if (response.body != 'false' && response.body != '' && int.tryParse(json.decode(response.body)) != null) {
+    if (response.body != 'false' && response.body != '' && int.tryParse(json.decode(response.body).toString()) != null) {
       usagerId = json.decode(response.body);
     } else if (json.decode(response.body)['error'] != null) {
       usagerId = -2;
