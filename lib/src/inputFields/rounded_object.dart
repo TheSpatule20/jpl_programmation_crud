@@ -275,6 +275,7 @@ class _RoundedInputFieldState extends State<RoundedInputField> {
           valeurEnEntrant = widget.controller!.text;
         }
       },
+      canRequestFocus: false,
       child: TextFieldContainer(
         dblTailleMultiplieur: (1 / widget.intTailleMultiplieur),
         child: TextFormField(
