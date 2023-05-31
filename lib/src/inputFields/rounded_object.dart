@@ -179,6 +179,7 @@ class _RoundedInputFieldState extends State<RoundedInputField> {
           onTap: () async {
             DateTime? pickedDate = await showDatePicker(
               context: context,
+              locale: const Locale('fr', 'CA'),
               initialDate: DateTime.now(),
               firstDate: DateTime(2000),
               lastDate: DateTime.now().add(const Duration(days: 365 * 5)),
