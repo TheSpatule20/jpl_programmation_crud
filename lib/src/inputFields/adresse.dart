@@ -169,7 +169,7 @@ class _CardAdresseState extends State<CardAdresse> {
     var numeroAppRueVille = <Widget>[
       RoundedInputField(
         textInputType: TextInputType.text,
-        intTailleMultiplieur: 1,
+        dblTailleMultiplieur: 1,
         controller: widget.ctlrLigne1,
         hintText: 'Adresse municipale',
         icon: Icons.home,
@@ -182,7 +182,7 @@ class _CardAdresseState extends State<CardAdresse> {
       ),
       RoundedInputField(
           textInputType: TextInputType.text,
-          intTailleMultiplieur: 1,
+          dblTailleMultiplieur: 1,
           controller: widget.ctlrLigne2,
           hintText: 'Apt, Suite, Unité, Immeuble',
           icon: Icons.apartment,
@@ -191,7 +191,7 @@ class _CardAdresseState extends State<CardAdresse> {
           }),
       RoundedInputField(
         textInputType: TextInputType.text,
-        intTailleMultiplieur: 1,
+        dblTailleMultiplieur: 1,
         controller: widget.ctlrVille,
         hintText: ville,
         icon: Icons.map,
@@ -207,7 +207,7 @@ class _CardAdresseState extends State<CardAdresse> {
       RoundedInputField(
         typeColumn: TypeColonne.dropdown,
         textInputType: TextInputType.text,
-        intTailleMultiplieur: widget.isPhone ? 1 : 3,
+        dblTailleMultiplieur: widget.isPhone ? 1 : 3,
         controller: widget.ctlrPays,
         hintText: pays,
         icon: Icons.flag,
@@ -235,7 +235,7 @@ class _CardAdresseState extends State<CardAdresse> {
           ? RoundedInputField(
               typeColumn: TypeColonne.dropdown,
               textInputType: TextInputType.text,
-              intTailleMultiplieur: widget.isPhone ? 1 : 3,
+              dblTailleMultiplieur: widget.isPhone ? 1 : 3,
               controller: widget.ctlrProvince,
               hintText: province,
               icon: Icons.map,
@@ -250,7 +250,7 @@ class _CardAdresseState extends State<CardAdresse> {
           : RoundedInputField(
               typeColumn: TypeColonne.string,
               textInputType: TextInputType.text,
-              intTailleMultiplieur:  widget.isPhone ? 1 : 3,
+              dblTailleMultiplieur:  widget.isPhone ? 1 : 3,
               controller: widget.ctlrProvince,
               hintText: province,
               icon: Icons.map,
@@ -263,7 +263,7 @@ class _CardAdresseState extends State<CardAdresse> {
             ),
       RoundedInputField(
         textInputType: TextInputType.text,
-        intTailleMultiplieur: widget.isPhone ? 1 : 3,
+        dblTailleMultiplieur: widget.isPhone ? 1 : 3,
         controller: widget.ctlrCodePostal,
         hintText: codePostal,
         icon: Icons.markunread_mailbox,

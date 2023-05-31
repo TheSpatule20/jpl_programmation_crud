@@ -181,7 +181,11 @@ class TextDialogWidgetState extends State<TextDialogWidget> {
             Text(widget.text ?? ''),
             widget.isBool == false
                 ? RoundedInputField(
-                    intTailleMultiplieur: MediaQuery.of(context).size.width > 600 ? 2 : 1,
+                    dblTailleMultiplieur: MediaQuery.of(context).size.width > 600
+                        ? 2
+                        : MediaQuery.of(context).size.width > 400
+                            ? 0.5
+                            : 1,
                     typeColumn: widget.typeColumn,
                     validator: null,
                     controller: controller,

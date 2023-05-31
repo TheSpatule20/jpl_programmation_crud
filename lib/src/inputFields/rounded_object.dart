@@ -16,7 +16,7 @@ class RoundedInputField extends StatefulWidget {
   final ValueChanged<String?>? onChanged;
   final FormFieldValidator<String>? validator;
   final TextEditingController? controller;
-  final int intTailleMultiplieur;
+  final double dblTailleMultiplieur;
   final List<TextInputFormatter>? inputFormat;
   final bool editable;
   final TypeColonne? typeColumn;
@@ -30,7 +30,7 @@ class RoundedInputField extends StatefulWidget {
     this.hintText,
     this.icon,
     this.onChanged,
-    this.intTailleMultiplieur = 1,
+    this.dblTailleMultiplieur = 1,
     this.validator,
     this.controller,
     this.inputFormat,
@@ -103,7 +103,7 @@ class _RoundedInputFieldState extends State<RoundedInputField> {
 
         TextEditingController siNonEditable = TextEditingController(text: valeur == null ? '' : valeur.titre);
         return TextFieldContainer(
-          dblTailleMultiplieur: (1 / widget.intTailleMultiplieur),
+          dblTailleMultiplieur: (1 / widget.dblTailleMultiplieur),
           child: widget.editable
               ? DropdownButtonFormField<DropdownObject>(
                   isExpanded: true,
@@ -174,7 +174,7 @@ class _RoundedInputFieldState extends State<RoundedInputField> {
     //date
     if (widget.typeColumn == TypeColonne.date) {
       return TextFieldContainer(
-        dblTailleMultiplieur: (1 / widget.intTailleMultiplieur),
+        dblTailleMultiplieur: (1 / widget.dblTailleMultiplieur),
         child: TextFormField(
           onTap: () async {
             DateTime? pickedDate = await showDatePicker(
@@ -205,7 +205,7 @@ class _RoundedInputFieldState extends State<RoundedInputField> {
     //time
     if (widget.typeColumn == TypeColonne.time) {
       return TextFieldContainer(
-        dblTailleMultiplieur: (1 / widget.intTailleMultiplieur),
+        dblTailleMultiplieur: (1 / widget.dblTailleMultiplieur),
         child: TextFormField(
           onTap: () async {
             DateFormat formatter = DateFormat("HH:mm");
@@ -277,7 +277,7 @@ class _RoundedInputFieldState extends State<RoundedInputField> {
       },
       canRequestFocus: false,
       child: TextFieldContainer(
-        dblTailleMultiplieur: (1 / widget.intTailleMultiplieur),
+        dblTailleMultiplieur: (1 / widget.dblTailleMultiplieur),
         child: TextFormField(
           onFieldSubmitted: widget.onFieldSubmitted,
           keyboardType: widget.textInputType,
